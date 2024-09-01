@@ -11,35 +11,22 @@
 class Solution {
 public:
     ListNode* deleteMiddle(ListNode* head) {
-        // If there's only one node, return null (empty list)
-        if (!head || !head->next) return nullptr;
-        
-        int count = 0;
-        ListNode* temp = head;
-        
-        // Count the number of nodes in the list
-        while (temp != nullptr) {
+       if(!head || !head->next)return NULL;
+        int count=0;
+        ListNode* temp=head;
+        while(temp!=NULL){
             count++;
-            temp = temp->next;
+            temp=temp->next;
         }
-        
-        // Find the middle node
-        count /= 2;
-        temp = head;
-        
-        // Traverse to the node before the middle node
-        while (count > 1) {
-            temp = temp->next;
+        count/=2;
+        temp=head;
+        while(count>1){
+            temp=temp->next;
             count--;
         }
-        
-        // Delete the middle node
-        ListNode* x = temp->next;
+        ListNode* x=temp->next;
         temp->next = x->next;
-        
-        // Free the memory of the deleted node if needed
         delete x;
-        
         return head;
     }
 };
