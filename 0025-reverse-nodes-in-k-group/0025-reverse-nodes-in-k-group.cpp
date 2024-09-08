@@ -32,8 +32,7 @@ public:
         // head=head->next;
         // delete first;
         // return head;
-        
-        if (!head || k == 1)
+          if (!head || k == 1)
       return head;
 
     const int length = getLength(head);
@@ -61,5 +60,6 @@ public:
     for (ListNode* curr = head; curr; curr = curr->next)
       ++length;
     return length;
+       
     }
 };
